@@ -22,30 +22,30 @@ public class TopicController {
     }
 
     @GetMapping("/")
-    List<Topic> getAll() {
+    public List<Topic> getAll() {
         return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    Topic get(@PathVariable("id") long id) {
+    public Topic get(@PathVariable("id") long id) {
         return repository.findById(id).get();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    void post(@RequestBody Topic topic) {
-        service.save(topic);
+    public void post(@RequestBody String topicName) {
+        service.save(topicName);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    void put(@RequestBody Topic topic) {
+    public void put(@RequestBody Topic topic) {
         repository.save(topic);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    void delete(@PathVariable("id") long id) {
+    public void delete(@PathVariable("id") long id) {
         repository.deleteById(id);
     }
 }

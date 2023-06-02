@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50d77122-b9f8-4376-ab31-73cd5f3637fe" name="Changes" comment="REST service moved to the backend module">
+    <list default="true" id="50d77122-b9f8-4376-ab31-73cd5f3637fe" name="Changes" comment="CommentController repository dependency fixed">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/fed/forum/model/TopicDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/fed/forum/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/fed/forum/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/fed/forum/controller/TopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/fed/forum/controller/TopicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/fed/forum/model/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/fed/forum/model/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/fed/forum/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/fed/forum/service/TopicService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,8 +37,9 @@
   <component name="ProjectId" id="2QaraB2xiER8bayHTbvdBGmqrOn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -64,11 +77,19 @@
       <option name="project" value="LOCAL" />
       <updated>1685603803024</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="CommentController repository dependency fixed">
+      <created>1685680429744</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685680429744</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="REST service moved to the backend module" />
-    <option name="LAST_COMMIT_MESSAGE" value="REST service moved to the backend module" />
+    <MESSAGE value="CommentController repository dependency fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="CommentController repository dependency fixed" />
   </component>
 </project>

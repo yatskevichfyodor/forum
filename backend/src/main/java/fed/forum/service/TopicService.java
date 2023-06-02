@@ -18,10 +18,10 @@ class TopicService {
         this.topicRepository = topicRepository;
     }
 
-    public void save(Topic topicDto) {
-        Topic topicToSave = new Topic(topicDto.getTitle());
+    public void save(String topicName) {
+        Topic topicToSave = new Topic(topicName);
         Topic savedTopic = topicRepository.save(topicToSave);
-        Comment firstComment = new Comment(savedTopic, topicDto.getComments().get(0).getContent());
-        commentRepository.save(firstComment);
+//        Comment firstComment = new Comment(savedTopic, topicDto.getComments().get(0).getContent());
+//        commentRepository.save(firstComment);
     }
 }
