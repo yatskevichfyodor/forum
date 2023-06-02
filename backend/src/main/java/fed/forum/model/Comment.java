@@ -3,6 +3,7 @@ package fed.forum.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -14,7 +15,7 @@ public class Comment {
         private Topic topic;
         private String content;
 //        @Temporal(TemporalType.TIMESTAMP)
-        private Date creationDateTime;
+        private LocalDateTime timestamp = LocalDateTime.now();
 
         public Comment(Topic topic, String content) {
                 this.topic = topic;
@@ -37,12 +38,12 @@ public class Comment {
                 this.content = content;
         }
 
-        public Date getCreationDateTime() {
-                return creationDateTime;
+        public LocalDateTime getCreationDateTime() {
+                return timestamp;
         }
 
-        public void setCreationDateTime(Date creationDateTime) {
-                this.creationDateTime = creationDateTime;
+        public void setCreationDateTime(LocalDateTime creationDateTime) {
+                this.timestamp = creationDateTime;
         }
 
         public Topic getTopic() {

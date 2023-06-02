@@ -2,6 +2,7 @@ package fed.forum.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Topic {
         private
         long id;
         private String title;
-        private Date timestamp;
+        private LocalDateTime timestamp = LocalDateTime.now();
         @OneToMany(mappedBy = "topic")
         private
         List<Comment> comments;
@@ -41,11 +42,11 @@ public class Topic {
                 this.title = title;
         }
 
-        public Date getTimestamp() {
+        public LocalDateTime getTimestamp() {
                 return timestamp;
         }
 
-        public void setTimestamp(Date timestamp) {
+        public void setTimestamp(LocalDateTime timestamp) {
                 this.timestamp = timestamp;
         }
 

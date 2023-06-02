@@ -32,9 +32,9 @@ export default defineComponent({
       </button>
     </div>
     <ul class="list-group">
-      <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">
-        <li class="list-group-item list-group-item-dark mb-1" aria-disabled="true">{{ topic.title }}</li>
-      </router-link>
+<!--      <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">-->
+<!--        <li class="list-group-item list-group-item-dark mb-1" aria-disabled="true">{{ topic.title }}</li>-->
+<!--      </router-link>-->
     </ul>
   </div>
 </template>

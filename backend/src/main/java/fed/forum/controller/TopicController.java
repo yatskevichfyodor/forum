@@ -33,8 +33,8 @@ public class TopicController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public void post(@RequestBody String topicName) {
-        service.save(topicName);
+    public void post(@RequestBody Topic topic) {
+        service.save(topic);
     }
 
     @PutMapping

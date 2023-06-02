@@ -4,6 +4,7 @@ import fed.forum.model.Comment;
 import fed.forum.model.Topic;
 import fed.forum.repository.CommentRepository;
 import fed.forum.repository.TopicRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,10 +19,10 @@ class TopicService {
         this.topicRepository = topicRepository;
     }
 
-    public void save(String topicName) {
-        Topic topicToSave = new Topic(topicName);
-        Topic savedTopic = topicRepository.save(topicToSave);
-//        Comment firstComment = new Comment(savedTopic, topicDto.getComments().get(0).getContent());
-//        commentRepository.save(firstComment);
+    @Transactional
+    public void save(Topic topic) {
+        Topic savedTopic = topicRepository.save(topic);
+        Comment firstComment = new Comment(savedTopic, topic.getComments().get(0).getContent());
+        commentRepository.save(firstComment);
     }
 }
