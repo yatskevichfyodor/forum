@@ -13,7 +13,11 @@ import java.util.List;
 @CrossOrigin
 public class CommentController {
 
-    CommentRepository repository;
+    private final CommentRepository repository;
+
+    public CommentController(CommentRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/")
     List<Comment> getAll() {
