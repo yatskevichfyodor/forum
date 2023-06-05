@@ -1,6 +1,7 @@
 package fed.forum.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -12,10 +13,14 @@ public class Comment {
         @GeneratedValue(strategy= GenerationType.AUTO)
         private long id;
         @ManyToOne
+        @JoinColumn(name = "topic_id", referencedColumnName = "id")
+        @JsonIgnore
         private Topic topic;
         private String content;
-//        @Temporal(TemporalType.TIMESTAMP)
         private LocalDateTime timestamp = LocalDateTime.now();
+
+        public Comment() {
+        }
 
         public Comment(Topic topic, String content) {
                 this.topic = topic;

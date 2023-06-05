@@ -1,8 +1,10 @@
 package fed.forum.controller;
 
 
+import fed.forum.dto.CommentDto;
 import fed.forum.model.Comment;
 import fed.forum.repository.CommentRepository;
+import fed.forum.service.CommentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,43 +15,21 @@ import java.util.List;
 @CrossOrigin
 public class CommentController {
 
-    private final CommentRepository repository;
+    private final CommentService service;
 
-    public CommentController(CommentRepository repository) {
-        this.repository = repository;
+    public CommentController(CommentService service) {
+        this.service = service;
     }
 
     @GetMapping("/")
     public List<Comment> getAll() {
-        return repository.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Comment get(@PathVariable("id") long id) {
-        return repository.findById(id).get();
-    }
-
-    @GetMapping("/findByTopicId/{topicId}")
-    public List<Comment> findByTopicId(@PathVariable("topicId") long topicId) {
-        return repository.findByTopicId(topicId);
+        return service.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public void post(@RequestBody Comment comment) {
-        repository.save(comment);
-    }
-
-    @PutMapping
-    @ResponseStatus(HttpStatus.OK)
-    public void put(@RequestBody Comment comment) {
-        repository.save(comment);
-    }
-
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable("id") long id) {
-        repository.deleteById(id);
+    public void post(@RequestBody CommentDto commentDto) {
+        service.save(commentDto);
     }
 }
 

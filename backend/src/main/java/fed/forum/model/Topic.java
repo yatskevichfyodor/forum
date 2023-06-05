@@ -7,19 +7,20 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "topics")
 public class Topic {
         @Id
         @GeneratedValue
-        private
-        long id;
+        private long id;
         private String title;
         private LocalDateTime timestamp = LocalDateTime.now();
         @OneToMany(mappedBy = "topic")
-        private
-        List<Comment> comments;
+        private List<Comment> comments;
 
         public Topic() {
+        }
+
+        public Topic(long id) {
+                this.id = id;
         }
 
         public Topic(String title) {

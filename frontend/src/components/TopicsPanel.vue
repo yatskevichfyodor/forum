@@ -12,10 +12,9 @@ export default defineComponent({
   methods: {
     async loadTopics() {
       let response = await topicService.getAll()
+      console.log(response)
+      console.log(response.data)
       this.topics = response.data
-    },
-    addTopic(title) {
-      topicService.create(title)
     }
   },
   mounted() {
@@ -26,16 +25,17 @@ export default defineComponent({
 
 <template>
   <div class="container mb-4 mt-4" id="topics-panel">
+    <h1>Topics list</h1>
+    <ul class="list-group">
+      <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">
+        <li class="list-group-item list-group-item-dark mb-1" aria-disabled="true">{{ topic.title }}</li>
+      </router-link>
+    </ul>
     <div class="mt-1 mb-3">
-      <button type="button" class="btn btn-dark">
+      <button type="button" class="btn btn-light">
         <router-link to="/topic-edit">Add topic</router-link>
       </button>
     </div>
-    <ul class="list-group">
-<!--      <router-link v-for="topic in topics" v-bind:to="{name: 'topic', params: { topicId: topic.id}}">-->
-<!--        <li class="list-group-item list-group-item-dark mb-1" aria-disabled="true">{{ topic.title }}</li>-->
-<!--      </router-link>-->
-    </ul>
   </div>
 </template>
 
