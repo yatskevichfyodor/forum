@@ -1,7 +1,7 @@
 <script>
 import {defineComponent} from 'vue'
-import {TopicService} from "@/services/TopicService";
 import {CommentService} from "@/services/CommentService";
+import {TopicService} from "@/services/TopicService";
 
 const topicService = new TopicService()
 const commentService = new CommentService()
