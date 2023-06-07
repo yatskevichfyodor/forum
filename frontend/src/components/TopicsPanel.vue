@@ -12,8 +12,6 @@ export default defineComponent({
   methods: {
     async loadTopics() {
       let response = await topicService.getAll()
-      console.log(response)
-      console.log(response.data)
       this.topics = response.data
     }
   },

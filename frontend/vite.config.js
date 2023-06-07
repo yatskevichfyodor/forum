@@ -4,10 +4,7 @@ import {defineConfig, loadEnv} from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({mode}) => {
-    console.log(mode)
-    console.log(process.cwd())
     const env = loadEnv(mode, process.cwd());
-    console.log(env)
     return {
         plugins: [vue()],
         resolve: {
@@ -16,11 +13,11 @@ export default defineConfig(({mode}) => {
             }
         },
         server: {
-            host: env.HOST,
-            port: env.PORT
+            host: env.VITE_HOST,
+            port: 8081
         },
         define: {
-            API_URL: env.API_URL
+            API_URL: JSON.stringify(env.VITE_API_URL)
         }
     }
 })
