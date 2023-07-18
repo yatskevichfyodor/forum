@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 public class Topic {
         @Id
-        @GeneratedValue
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long id;
         private String title;
         private LocalDateTime timestamp = LocalDateTime.now();

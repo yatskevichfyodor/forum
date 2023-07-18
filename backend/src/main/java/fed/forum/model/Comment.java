@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Comment {
         @Id
-        @GeneratedValue(strategy= GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long id;
         @ManyToOne
         @JoinColumn(name = "topic_id", referencedColumnName = "id")
