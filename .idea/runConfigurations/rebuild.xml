@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="rebuild" type="CompoundRunConfigurationType">
+    <toRun name="rebuild backend" type="MavenRunConfiguration" />
+    <toRun name="rebuild frontend" type="MavenRunConfiguration" />
+    <method v="2" />
+  </configuration>
+</component>
