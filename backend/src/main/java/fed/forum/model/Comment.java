@@ -3,9 +3,7 @@ package fed.forum.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 public class Comment {
@@ -16,6 +14,8 @@ public class Comment {
         @JoinColumn(name = "topic_id", referencedColumnName = "id")
         @JsonIgnore
         private Topic topic;
+        @Lob
+        @Column(length = 100000)
         private String content;
         private LocalDateTime timestamp = LocalDateTime.now();
 
