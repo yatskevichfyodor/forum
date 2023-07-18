@@ -7,6 +7,12 @@
 ![Alt text](/description/add-topic-page.PNG "Add topic page")
 ![Alt text](/description/topic-page.PNG "Topic page")
 
+## First launch with IDEA
+1. Make sure to enable MySQL service
+2. Make sure to create database "forum"
+3. In "Run configurations" select and launch rebuild
+4. In "Run configurations" select and launch run
+
 ## Docker container launch
 1. Install Docker
    #### https://docs.docker.com/desktop/install/windows-install/
