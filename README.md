@@ -1,7 +1,8 @@
 # Description
 #### Simple single-page CRUD application.
-#### Backend: java + spring boot
-#### Frontend: vuejs (javascript)
+#### Backend: Java + Spring Boot
+#### Frontend: VueJS (Javascript)
+#### Other technologies: Docker, MySQL, Liquibase
 ![Alt text](/description/main-page.PNG "Main page")
 ![Alt text](/description/topics-panel-page.PNG "Topics list")
 ![Alt text](/description/add-topic-page.PNG "Add topic page")
