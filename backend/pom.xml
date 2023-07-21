@@ -32,6 +32,11 @@
             <version>2.0</version>
         </dependency>
         <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.2.220</version>
+        </dependency>
+        <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.0.33</version>
@@ -65,16 +70,27 @@
                     <groupId>org.liquibase</groupId>
                     <artifactId>liquibase-maven-plugin</artifactId>
                     <version>${liquibase.version}</version>
+<!--                    <configuration>-->
+<!--                        <outputChangeLogFile>src/main/resources/db/liquibase-changelog.mysql.sql-->
+<!--                        </outputChangeLogFile>-->
+<!--                        <driver>com.mysql.jdbc.Driver</driver>-->
+<!--                        <url>jdbc:mysql://localhost:3306/forum</url>-->
+<!--                        <username>root</username>-->
+<!--                        <password>0000</password>-->
+<!--                        <diffTypes>tables, views, columns, indexes, foreignkeys, primarykeys, uniqueconstraints, data-->
+<!--                        </diffTypes>-->
+<!--                    </configuration>-->
+
+<!--                    LAUNCH mvn liquibase:generateChangeLog FROM THE backend FOLDER-->
                     <configuration>
-                        <outputChangeLogFile>src/main/resources/changelog/liquibase-changelog.mysql.sql
+                        <outputChangeLogFile>src/main/resources/db/liquibase-changelog.yml
                         </outputChangeLogFile>
-                        <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/forum_tmp</url>
-                        <username>root</username>
-                        <password>0000</password>
+                        <driver>org.h2.Driver</driver>
+                        <url>jdbc:h2:file:../h2/demo</url>
+                        <username>sa</username>
+                        <password>sa</password>
                         <diffTypes>tables, views, columns, indexes, foreignkeys, primarykeys, uniqueconstraints, data
                         </diffTypes>
-                        <convertDataTypes>true</convertDataTypes>
                     </configuration>
                 </plugin>
             </plugins>

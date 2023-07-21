@@ -1,15 +1,13 @@
 package fed.forum.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Entity
 public class Topic {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.SEQUENCE)
         private long id;
         private String title;
         private LocalDateTime timestamp = LocalDateTime.now();
