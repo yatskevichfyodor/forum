@@ -9,9 +9,8 @@
 ![Alt text](/description/topic-page.PNG "Topic page")
 
 ## First launch with IDEA
-1. Make sure to enable MySQL service
-2. In "Run configurations" select and launch rebuild
-3. In "Run configurations" select and launch run
+1. In "Run configurations" select and launch rebuild
+2. In "Run configurations" select and launch run
 
 ## Docker container launch
 1. Install Docker
